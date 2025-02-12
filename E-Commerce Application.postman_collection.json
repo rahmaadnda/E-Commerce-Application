@@ -1,0 +1,1055 @@
+{
+	"info": {
+		"_postman_id": "ea2078ac-6021-4dcd-b5e0-42fa34a9ddd4",
+		"name": "E-Commerce Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23440142"
+	},
+	"item": [
+		{
+			"name": "address-controller",
+			"item": [
+				{
+					"name": "Create Address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"street\": \"Jl. Ahmad Yani No. 23\",\r\n  \"buildingName\": \"Ruko Sentosa\",\r\n  \"city\": \"Surabaya\",\r\n  \"state\": \"Jawa Timur\",\r\n  \"country\": \"Indonesia\",\r\n  \"pincode\": \"601231\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin/address",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Addresses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/admin/addresses",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Address",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/admin/addresses/:addressId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"addresses",
+								":addressId"
+							],
+							"variable": [
+								{
+									"key": "addressId",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"addressId\": 27,\r\n  \"street\": \"string\",\r\n  \"buildingName\": \"string\",\r\n  \"city\": \"string\",\r\n  \"state\": \"string\",\r\n  \"country\": \"string\",\r\n  \"pincode\": \"string\",\r\n  \"users\": [\r\n    {\r\n      \"userId\": 0,\r\n      \"firstName\": \"xMSTreEPFxoGodKjylSB\",\r\n      \"lastName\": \"CINQvTADbZNLchTfmBDe\",\r\n      \"mobileNumber\": \"2236786367\",\r\n      \"email\": \"string\",\r\n      \"password\": \"string\",\r\n      \"roles\": [\r\n        {\r\n          \"roleId\": 0,\r\n          \"roleName\": \"string\"\r\n        }\r\n      ],\r\n      \"addresses\": [\r\n        \"string\"\r\n      ],\r\n      \"cart\": {\r\n        \"cartId\": 0,\r\n        \"user\": \"string\",\r\n        \"cartItems\": [\r\n          {\r\n            \"cartItemId\": 0,\r\n            \"cart\": \"string\",\r\n            \"product\": {\r\n              \"productId\": 0,\r\n              \"productName\": \"string\",\r\n              \"image\": \"string\",\r\n              \"description\": \"string\",\r\n              \"quantity\": 0,\r\n              \"price\": 0,\r\n              \"discount\": 0,\r\n              \"specialPrice\": 0,\r\n              \"category\": {\r\n                \"categoryId\": 0,\r\n                \"categoryName\": \"string\",\r\n                \"products\": [\r\n                  \"string\"\r\n                ]\r\n              },\r\n              \"products\": [\r\n                \"string\"\r\n              ],\r\n              \"orderItems\": [\r\n                {\r\n                  \"orderItemId\": 0,\r\n                  \"product\": \"string\",\r\n                  \"order\": {\r\n                    \"orderId\": 0,\r\n                    \"email\": \"string\",\r\n                    \"orderItems\": [\r\n                      \"string\"\r\n                    ],\r\n                    \"orderDate\": \"2025-02-10\",\r\n                    \"payment\": {\r\n                      \"paymentId\": 0,\r\n                      \"order\": \"string\",\r\n                      \"paymentMethod\": \"string\"\r\n                    },\r\n                    \"totalAmount\": 0,\r\n                    \"orderStatus\": \"string\"\r\n                  },\r\n                  \"quantity\": 0,\r\n                  \"discount\": 0,\r\n                  \"orderedProductPrice\": 0\r\n                }\r\n              ]\r\n            },\r\n            \"quantity\": 0,\r\n            \"discount\": 0,\r\n            \"productPrice\": 0\r\n          }\r\n        ],\r\n        \"totalPrice\": 0\r\n      }\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin/addresses/:addressId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"addresses",
+								":addressId"
+							],
+							"variable": [
+								{
+									"key": "addressId",
+									"value": "27"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/admin/addresses/:addressId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"addresses",
+								":addressId"
+							],
+							"variable": [
+								{
+									"key": "addressId",
+									"value": "27"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth-controller",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 12,\r\n  \"firstName\": \"Lestari\",\r\n  \"lastName\": \"Wijayanti\",\r\n  \"mobileNumber\": \"0812345689\",\r\n  \"email\": \"lestari.wijayanti@example.com\",\r\n  \"password\": \"password123\",\r\n  \"roles\": [\r\n    {\r\n      \"roleId\": 102,\r\n      \"roleName\": \"USER\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"addressId\": 12,\r\n    \"street\": \"Jl. Merdeka No. 15\",\r\n    \"buildingName\": \"Ruko Wijaya\",\r\n    \"city\": \"Bandung\",\r\n    \"state\": \"Jawa Barat\",\r\n    \"country\": \"Indonesia\",\r\n    \"pincode\": \"401321\"\r\n  },\r\n  \"cart\": {\r\n    \"cartId\": 12,\r\n    \"totalPrice\": 95000,\r\n    \"products\": [\r\n      {\r\n        \"productId\": 12,\r\n        \"productName\": \"Tas Selempang\",\r\n        \"image\": \"tas.jpg\",\r\n        \"description\": \"Tas selempang stylish dan praktis.\",\r\n        \"quantity\": 1,\r\n        \"price\": 95000,\r\n        \"discount\": 10,\r\n        \"specialPrice\": 85500\r\n      }\r\n    ]\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"citra.wijaya@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart-controller",
+			"item": [
+				{
+					"name": "Get All Carts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/admin/carts",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product from Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/public/carts/:cartId/product/:productId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"public",
+								"carts",
+								":cartId",
+								"product",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "cartId",
+									"value": ""
+								},
+								{
+									"key": "productId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product Quantity",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/public/carts/:cartId/product/:productId/quantity/:quantity",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"public",
+								"carts",
+								":cartId",
+								"product",
+								":productId",
+								"quantity",
+								":quantity"
+							],
+							"variable": [
+								{
+									"key": "cartId",
+									"value": ""
+								},
+								{
+									"key": "productId",
+									"value": ""
+								},
+								{
+									"key": "quantity",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product to Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/public/carts/:cartId/products/:productId/quantity/:quantity",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"public",
+								"carts",
+								":cartId",
+								"products",
+								":productId",
+								"quantity",
+								":quantity"
+							],
+							"variable": [
+								{
+									"key": "cartId",
+									"value": "8"
+								},
+								{
+									"key": "productId",
+									"value": "3"
+								},
+								{
+									"key": "quantity",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/public/users/:email/carts/:cartId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"public",
+								"users",
+								":email",
+								"carts",
+								":cartId"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": ""
+								},
+								{
+									"key": "cartId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category-controller",
+			"item": [
+				{
+					"name": "Edit Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"categoryId\": 0,\r\n  \"categoryName\": \"string\",\r\n  \"products\": [\r\n    {\r\n      \"productId\": 0,\r\n      \"productName\": \"string\",\r\n      \"image\": \"string\",\r\n      \"description\": \"string\",\r\n      \"quantity\": 0,\r\n      \"price\": 0,\r\n      \"discount\": 0,\r\n      \"specialPrice\": 0,\r\n      \"category\": \"string\",\r\n      \"products\": [\r\n        {\r\n          \"cartItemId\": 0,\r\n          \"cart\": {\r\n            \"cartId\": 0,\r\n            \"user\": {\r\n              \"userId\": 0,\r\n              \"firstName\": \"YYMwxWYtTTsXpvxEHZGD\",\r\n              \"lastName\": \"QgBLvyXyZFqOzqvTudVm\",\r\n              \"mobileNumber\": \"8711537296\",\r\n              \"email\": \"string\",\r\n              \"password\": \"string\",\r\n              \"roles\": [\r\n                {\r\n                  \"roleId\": 0,\r\n                  \"roleName\": \"string\"\r\n                }\r\n              ],\r\n              \"addresses\": [\r\n                {\r\n                  \"addressId\": 0,\r\n                  \"street\": \"string\",\r\n                  \"buildingName\": \"string\",\r\n                  \"city\": \"string\",\r\n                  \"state\": \"string\",\r\n                  \"country\": \"string\",\r\n                  \"pincode\": \"string\",\r\n                  \"users\": [\r\n                    \"string\"\r\n                  ]\r\n                }\r\n              ],\r\n              \"cart\": \"string\"\r\n            },\r\n            \"cartItems\": [\r\n              \"string\"\r\n            ],\r\n            \"totalPrice\": 0\r\n          },\r\n          \"product\": \"string\",\r\n          \"quantity\": 0,\r\n          \"discount\": 0,\r\n          \"productPrice\": 0\r\n        }\r\n      ],\r\n      \"orderItems\": [\r\n        {\r\n          \"orderItemId\": 0,\r\n          \"product\": \"string\",\r\n          \"order\": {\r\n            \"orderId\": 0,\r\n            \"email\": \"string\",\r\n            \"orderItems\": [\r\n              \"string\"\r\n            ],\r\n            \"orderDate\": \"2025-02-10\",\r\n            \"payment\": {\r\n              \"paymentId\": 0,\r\n              \"order\": \"string\",\r\n              \"paymentMethod\": \"string\"\r\n            },\r\n            \"totalAmount\": 0,\r\n            \"orderStatus\": \"string\"\r\n          },\r\n          \"quantity\": 0,\r\n          \"discount\": 0,\r\n          \"orderedProductPrice\": 0\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin/categories/:categoryId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"categories",
+								":categoryId"
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/admin/categories/:categoryId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"categories",
+								":categoryId"
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryId\": 1,\r\n    \"categoryName\": \"Elektronik\",\r\n    \"products\": [\r\n      {\r\n        \"productId\": 101,\r\n        \"productName\": \"Smartphone XYZ\",\r\n        \"image\": \"smartphone.jpg\",\r\n        \"description\": \"Smartphone dengan layar AMOLED 6.5 inci dan kamera 64MP.\",\r\n        \"quantity\": 50,\r\n        \"price\": 4500000,\r\n        \"discount\": 10,\r\n        \"specialPrice\": 4050000,\r\n        \"category\": \"Elektronik\",\r\n        \"products\": [\r\n          {\r\n            \"cartItemId\": 201,\r\n            \"cart\": {\r\n              \"cartId\": 301,\r\n              \"user\": {\r\n                \"userId\": 401,\r\n                \"firstName\": \"Andi\",\r\n                \"lastName\": \"Wijaya\",\r\n                \"mobileNumber\": \"0812345678\",\r\n                \"email\": \"andi.wijaya@example.com\",\r\n                \"password\": \"password123\",\r\n                \"roles\": [\r\n                  {\r\n                    \"roleId\": 102,\r\n                    \"roleName\": \"USER\"\r\n                  }\r\n                ],\r\n                \"addresses\": [\r\n                  {\r\n                    \"addressId\": 501,\r\n                    \"street\": \"Jl. Merdeka No. 10\",\r\n                    \"buildingName\": \"Ruko Elektronik\",\r\n                    \"city\": \"Jakarta\",\r\n                    \"state\": \"DKI Jakarta\",\r\n                    \"country\": \"Indonesia\",\r\n                    \"pincode\": \"10110\",\r\n                    \"users\": [\r\n                      \"Andi Wijaya\"\r\n                    ]\r\n                  }\r\n                ],\r\n                \"cart\": \"Cart 301\"\r\n              },\r\n              \"cartItems\": [\r\n                \"Smartphone XYZ\"\r\n              ],\r\n              \"totalPrice\": 4050000\r\n            },\r\n            \"product\": \"Smartphone XYZ\",\r\n            \"quantity\": 1,\r\n            \"discount\": 10,\r\n            \"productPrice\": 4050000\r\n          }\r\n        ],\r\n        \"orderItems\": [\r\n          {\r\n            \"orderItemId\": 601,\r\n            \"product\": \"Smartphone XYZ\",\r\n            \"order\": {\r\n              \"orderId\": 701,\r\n              \"email\": \"andi.wijaya@example.com\",\r\n              \"orderItems\": [\r\n                \"Smartphone XYZ\"\r\n              ],\r\n              \"orderDate\": \"2025-02-10\",\r\n              \"payment\": {\r\n                \"paymentId\": 8,\r\n              },\r\n              \"totalAmount\": 4050000,\r\n              \"orderStatus\": \"Dikirim\"\r\n            },\r\n            \"quantity\": 1,\r\n            \"discount\": 10,\r\n            \"orderedProductPrice\": 4050000\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  },\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin/category",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "pageNumber",
+								"value": "0",
+								"type": "text"
+							},
+							{
+								"key": "pageSize",
+								"value": "11",
+								"type": "text"
+							},
+							{
+								"key": "sortBy",
+								"value": "categoryId",
+								"type": "text"
+							},
+							{
+								"key": "sortOrder",
+								"value": "asc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/public/categories",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"public",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order-controller",
+			"item": [
+				{
+					"name": "Get All Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/admin/orders",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/admin/users/:email/orders/:orderId/orderStatus/:orderStatus",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								":email",
+								"orders",
+								":orderId",
+								"orderStatus",
+								":orderStatus"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "adi.putra@example.com"
+								},
+								{
+									"key": "orderId",
+									"value": "3"
+								},
+								{
+									"key": "orderStatus",
+									"value": "COMPLETED"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/public/users/:email/carts/:cartId/payments/:paymentMethod/order",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"public",
+								"users",
+								":email",
+								"carts",
+								":cartId",
+								"payments",
+								":paymentMethod",
+								"order"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "budi.santoso@example.com"
+								},
+								{
+									"key": "cartId",
+									"value": "8"
+								},
+								{
+									"key": "paymentMethod",
+									"value": "QRIS"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's All Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/public/users/:email/orders",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"public",
+								"users",
+								":email",
+								"orders"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "adi.putra@example.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User's Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/public/users/:email/orders/:orderId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"public",
+								"users",
+								":email",
+								"orders",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "adi.putra@example.com"
+								},
+								{
+									"key": "orderId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product-controller",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 0,\r\n  \"productName\": \"string\",\r\n  \"image\": \"string\",\r\n  \"description\": \"string\",\r\n  \"quantity\": 0,\r\n  \"price\": 0,\r\n  \"discount\": 0,\r\n  \"specialPrice\": 0,\r\n  \"category\": {\r\n    \"categoryId\": 0,\r\n    \"categoryName\": \"string\",\r\n    \"products\": [\r\n      \"string\"\r\n    ]\r\n  },\r\n  \"products\": [\r\n    {\r\n      \"cartItemId\": 0,\r\n      \"cart\": {\r\n        \"cartId\": 0,\r\n        \"user\": {\r\n          \"userId\": 0,\r\n          \"firstName\": \"AzFyZyAnVibCkRGLAtTY\",\r\n          \"lastName\": \"IXSERkloObkPprzxTEGE\",\r\n          \"mobileNumber\": \"8989715638\",\r\n          \"email\": \"string\",\r\n          \"password\": \"string\",\r\n          \"roles\": [\r\n            {\r\n              \"roleId\": 0,\r\n              \"roleName\": \"string\"\r\n            }\r\n          ],\r\n          \"addresses\": [\r\n            {\r\n              \"addressId\": 0,\r\n              \"street\": \"string\",\r\n              \"buildingName\": \"string\",\r\n              \"city\": \"string\",\r\n              \"state\": \"string\",\r\n              \"country\": \"string\",\r\n              \"pincode\": \"string\",\r\n              \"users\": [\r\n                \"string\"\r\n              ]\r\n            }\r\n          ],\r\n          \"cart\": \"string\"\r\n        },\r\n        \"cartItems\": [\r\n          \"string\"\r\n        ],\r\n        \"totalPrice\": 0\r\n      },\r\n      \"product\": \"string\",\r\n      \"quantity\": 0,\r\n      \"discount\": 0,\r\n      \"productPrice\": 0\r\n    }\r\n  ],\r\n  \"orderItems\": [\r\n    {\r\n      \"orderItemId\": 0,\r\n      \"product\": \"string\",\r\n      \"order\": {\r\n        \"orderId\": 0,\r\n        \"email\": \"string\",\r\n        \"orderItems\": [\r\n          \"string\"\r\n        ],\r\n        \"orderDate\": \"2025-02-10\",\r\n        \"payment\": {\r\n          \"paymentId\": 0,\r\n          \"order\": \"string\",\r\n          \"paymentMethod\": \"string\"\r\n        },\r\n        \"totalAmount\": 0,\r\n        \"orderStatus\": \"string\"\r\n      },\r\n      \"quantity\": 0,\r\n      \"discount\": 0,\r\n      \"orderedProductPrice\": 0\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin/categories/:categoryId/product",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"categories",
+								":categoryId",
+								"product"
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/admin/products/:productId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/admin/products/:productId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product Image",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"image\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin/products/:productId/image",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"products",
+								":productId",
+								"image"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/public/categories/:categoryId/products",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"public",
+								"categories",
+								":categoryId",
+								"products"
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/public/products",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"public",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products By Keyword",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/public/products/keyword/:keyword",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"public",
+								"products",
+								"keyword",
+								":keyword"
+							],
+							"variable": [
+								{
+									"key": "keyword",
+									"value": "Meja"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-controller",
+			"item": [
+				{
+					"name": "Get All Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "pageNumber",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "pageSize",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "sortBy",
+									"value": "userId",
+									"type": "text"
+								},
+								{
+									"key": "sortOrder",
+									"value": "asc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/admin/users",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "userId",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "asc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "userId",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/admin/users/:userId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								":userId"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/public/users/:userId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"public",
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 20,\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"mobileNumber\": \"0811223344\",\r\n  \"email\": \"mail@gmail.com\",\r\n  \"password\": \"string\",\r\n  \"roles\": [\r\n    {\r\n      \"roleId\": 0,\r\n      \"roleName\": \"string\"\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"addressId\": 0,\r\n    \"street\": \"string\",\r\n    \"buildingName\": \"string\",\r\n    \"city\": \"string\",\r\n    \"state\": \"string\",\r\n    \"country\": \"string\",\r\n    \"pincode\": \"string\"\r\n  },\r\n  \"cart\": {\r\n    \"cartId\": 0,\r\n    \"totalPrice\": 0,\r\n    \"products\": [\r\n      {\r\n        \"productId\": 0,\r\n        \"productName\": \"string\",\r\n        \"image\": \"string\",\r\n        \"description\": \"string\",\r\n        \"quantity\": 0,\r\n        \"price\": 0,\r\n        \"discount\": 0,\r\n        \"specialPrice\": 0\r\n      }\r\n    ]\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/public/users/:userId",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"public",
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "21"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIERldGFpbHMiLCJpc3MiOiJFdmVudCBTY2hlZHVsZXIiLCJpYXQiOjE3MzkzNjg5MDUsImVtYWlsIjoiY2l0cmEud2lqYXlhQGV4YW1wbGUuY29tIn0.pshVCbty8drpOVD2XdRU-kD9iI1zMap9oUcPB03YffE",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	]
+}
