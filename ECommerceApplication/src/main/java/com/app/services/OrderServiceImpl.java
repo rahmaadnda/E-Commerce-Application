@@ -15,17 +15,20 @@ import org.springframework.stereotype.Service;
 
 import com.app.entites.Cart;
 import com.app.entites.CartItem;
+import com.app.entites.CreditCard;
 import com.app.entites.Order;
 import com.app.entites.OrderItem;
 import com.app.entites.Payment;
 import com.app.entites.Product;
 import com.app.exceptions.APIException;
 import com.app.exceptions.ResourceNotFoundException;
+import com.app.payloads.CreditCardDTO;
 import com.app.payloads.OrderDTO;
 import com.app.payloads.OrderItemDTO;
 import com.app.payloads.OrderResponse;
 import com.app.repositories.CartItemRepo;
 import com.app.repositories.CartRepo;
+import com.app.repositories.CreditCardRepo;
 import com.app.repositories.OrderItemRepo;
 import com.app.repositories.OrderRepo;
 import com.app.repositories.PaymentRepo;
@@ -56,6 +59,9 @@ public class OrderServiceImpl implements OrderService {
 	public CartItemRepo cartItemRepo;
 
 	@Autowired
+	private CreditCardRepo creditCardRepo;
+
+	@Autowired
 	public UserService userService;
 
 	@Autowired
@@ -65,7 +71,7 @@ public class OrderServiceImpl implements OrderService {
 	public ModelMapper modelMapper;
 
 	@Override
-	public OrderDTO placeOrder(String email, Long cartId, String paymentMethod) {
+	public OrderDTO placeOrder(String email, Long cartId, String paymentMethod, CreditCardDTO creditCardDTO) {
 
 		Cart cart = cartRepo.findCartByEmailAndCartId(email, cartId);
 
@@ -85,7 +91,18 @@ public class OrderServiceImpl implements OrderService {
 		payment.setOrder(order);
 		payment.setPaymentMethod(paymentMethod);
 
+		CreditCard creditCard = new CreditCard();
+		creditCard.setPayment(payment);
+		creditCard.setCardNumber(creditCardDTO.getCardNumber());
+		creditCard.setCvc(creditCardDTO.getCvc());
+		
+		// System.out.println(creditCardDTO.getCardNumber());
+		// System.out.println(creditCardDTO.getCvc());
+		// payment.setCardNumber(paymentDTO.getCardNumber());
+		// payment.setCvc(paymentDTO.getCvc());
+
 		payment = paymentRepo.save(payment);
+		creditCard = creditCardRepo.save(creditCard);
 
 		order.setPayment(payment);
 
